@@ -21,11 +21,16 @@ function App() {
     setMovie(data)
   }
 
+  // 
+  useEffect(() => {
+    getMovie('clueless')
+  }, [])
 
   return (
     <div className="App">
-      <Form />
-      <MovieDisplay />
+      <h1>MOVIE FETCH</h1>
+      <Form getMovie={getMovie}/>
+      <MovieDisplay movie={movie}/>
     </div>
   );
 }
